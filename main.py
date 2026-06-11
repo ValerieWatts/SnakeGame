@@ -35,10 +35,8 @@ while game:
             snake.grow()
             scoreboard.increase()
 
-        for pieces in snake.snake_blocks:
-            if pieces == snake.snake_blocks[0]:
-                pass
-            elif snake.snake_blocks[0].distance(pieces) < 10:
+        for pieces in snake.snake_blocks[1:]:
+            if snake.snake_blocks[0].distance(pieces) < 10:
                 scoreboard.gameover()
                 game = False
 
